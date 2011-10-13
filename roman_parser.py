@@ -13,14 +13,11 @@ class RomanParser(object):
         return result
 
     def _parse_number(self, result, a_number):
-        for r in self.romans:
-            if r.can_parse(a_number):
-                result, a_number = r.parse(result, a_number)
+        for roman in self.romans:
+            if roman._can_parse(a_number):
+                result, a_number = roman.parse(result, a_number)
                 break
 
-            for p in r.previous:
-                if p.can_parse(a_number):
-                    result, a_number = p.parse(result, a_number)
-                    break
+            result, a_number = roman._child_parse(result, a_number)
 
         return result, a_number
