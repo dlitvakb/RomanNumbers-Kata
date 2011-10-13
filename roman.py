@@ -6,3 +6,8 @@ class Roman(object):
 
     def can_parse(self, a_number):
         return a_number - self.value >= 0
+
+    def parse(self, result, a_number):
+        result += self.symbol
+        a_number -= self.value
+        return result, a_number

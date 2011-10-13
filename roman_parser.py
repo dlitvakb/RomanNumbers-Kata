@@ -17,14 +17,12 @@ class RomanParser(object):
 
             for r in self.romans:
                 if r.can_parse(a_number):
-                    result += r.symbol
-                    a_number -= r.value
+                    result, a_number = r.parse(result, a_number)
                     break
 
                 for p in r.previous:
                     if p.can_parse(a_number):
-                        result += p.symbol
-                        a_number -= p.value
+                        result, a_number = p.parse(result, a_number)
                         break
 
         return result
