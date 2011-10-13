@@ -1,14 +1,16 @@
 from roman import Roman
 
+MIL = Roman("M", 1000, [Roman("CM", 900, []), Roman("XM", 990, []), Roman("IM", 999, [])])
+QUINIENTOS = Roman("L", 500, [Roman("CL", 400, []), Roman("XL", 490, []), Roman("IL", 499, [])])
+CIEN = Roman("C", 100, [Roman("XC", 90, []), Roman("IC", 99, [])])
+CINCUENTA = Roman("D", 50, [Roman("XD", 40, []), Roman("ID", 49, [])])
+DIEZ = Roman("X",10,[Roman("IX", 9, [])])
+CINCO = Roman("V", 5, [Roman("IV", 4,[])])
+UNO = Roman("I",1,[])
+
 class RomanParser(object):
     def __init__(self):
-        self.romans = [ Roman("M", 1000, [Roman("CM", 900, []), Roman("XM", 990, []), Roman("IM", 999, [])]),
-                        Roman("L", 500, [Roman("CL", 400, []), Roman("XL", 490, []), Roman("IL", 499, [])]),
-                        Roman("C", 100, [Roman("XC", 90, []), Roman("IC", 99, [])]),
-                        Roman("D", 50, [Roman("XD", 40, []), Roman("ID", 49, [])]),
-                        Roman("X",10,[Roman("IX", 9, [])]),
-                        Roman("V", 5, [Roman("IV", 4,[])]),
-                        Roman("I",1,[])]
+        self.romans = [ MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO]
 
     def parse(self, a_number):
         result = ""
