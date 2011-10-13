@@ -2,7 +2,7 @@ from roman import Roman, MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO
 
 class RomanParser(object):
     def __init__(self):
-        self.romans = [ MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO]
+        self.romans = [MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO]
 
     def parse(self, a_number):
         result = ""

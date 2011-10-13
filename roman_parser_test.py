@@ -39,6 +39,9 @@ class RomanParserTest(unittest.TestCase):
     def test_decimal_1117_a_romano_MCXVII(self):
         self.assertEquals(RomanParser().parse(1117), "MCXVII")
 
+    def test_decimal_944_a_romano_CMXDIV(self):
+        self.assertEquals(RomanParser().parse(944), "CMXDIV")
+
 if __name__ == "__main__":
 
     unittest.main()
