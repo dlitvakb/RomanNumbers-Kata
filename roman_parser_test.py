@@ -7,9 +7,9 @@ romans = {1:'I', 2:'II', 3:'III', 4:'IV', 5:'V', 6:'VI',
           16:'XVI', 17:'XVII', 19:'XIX', 20:'XX',
           21:'XXI', 23:'XXIII', 24:'XXIV', 26:'XXVI',
           29:'XXIX', 30:'XXX', 31:'XXXI', 34:'XXXIV',
-          39:'XXXIX', 40:'XD', 41:'XDI', 44:'XDIV', 48:'XDVIII',
-          49:'XDIX', 50:'D', 1321:'MCCCXXI', 1439:'MCLXXXIX',
-          1999: 'MCMXCIX', 3948:'MMMCMXDVIII'}
+          39:'XXXIX', 40:'XL', 41:'XLI', 44:'XLIV', 48:'XLVIII',
+          49:'XLIX', 50:'L', 1321:'MCCCXXI', 1439:'MCDXXXIX',
+          1999: 'MCMXCIX', 3948:'MMMCMXLVIII'}
 
 class RomanParserTest(unittest.TestCase):
     def test_los_decimales_se_traducen_correctamente_a_romanos(self):

@@ -29,9 +29,9 @@ class ChildRoman(Roman):
 
 
 MIL = Roman("M", 1000, ChildRoman("CM", 900))
-QUINIENTOS = Roman("L", 500, ChildRoman("CL", 400))
+QUINIENTOS = Roman("D", 500, ChildRoman("CD", 400))
 CIEN = Roman("C", 100, ChildRoman("XC", 90))
-CINCUENTA = Roman("D", 50, ChildRoman("XD", 40))
+CINCUENTA = Roman("L", 50, ChildRoman("XL", 40))
 DIEZ = Roman("X",10, ChildRoman("IX", 9))
 CINCO = Roman("V", 5, ChildRoman("IV", 4))
 UNO = ChildRoman("I",1)
