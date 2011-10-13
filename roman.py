@@ -1,3 +1,4 @@
+
 class Roman(object):
     def __init__(self, symbol, value, previous):
         self.symbol = symbol
@@ -13,17 +14,24 @@ class Roman(object):
         return result, a_number
 
     def _child_parse(self, result, a_number):
-        for p in self.previous:
-            if p._can_parse(a_number):
-                return p.parse(result, a_number)
+        if self.previous._can_parse(a_number):
+            return self.previous.parse(result, a_number)
 
         return result, a_number
 
+class ChildRoman(Roman):
+    def __init__(self, symbol, value):
+        self.symbol = symbol
+        self.value = value
 
-MIL = Roman("M", 1000, [Roman("CM", 900, []), Roman("XM", 990, []), Roman("IM", 999, [])])
-QUINIENTOS = Roman("L", 500, [Roman("CL", 400, []), Roman("XL", 490, []), Roman("IL", 499, [])])
-CIEN = Roman("C", 100, [Roman("XC", 90, []), Roman("IC", 99, [])])
-CINCUENTA = Roman("D", 50, [Roman("XD", 40, []), Roman("ID", 49, [])])
-DIEZ = Roman("X",10,[Roman("IX", 9, [])])
-CINCO = Roman("V", 5, [Roman("IV", 4,[])])
-UNO = Roman("I",1,[])
+    def _child_parse(self, result, a_number):
+        return result, a_number
+
+
+MIL = Roman("M", 1000, ChildRoman("CM", 900))
+QUINIENTOS = Roman("L", 500, ChildRoman("CL", 400))
+CIEN = Roman("C", 100, ChildRoman("XC", 90))
+CINCUENTA = Roman("D", 50, ChildRoman("XD", 40))
+DIEZ = Roman("X",10, ChildRoman("IX", 9))
+CINCO = Roman("V", 5, ChildRoman("IV", 4))
+UNO = ChildRoman("I",1)

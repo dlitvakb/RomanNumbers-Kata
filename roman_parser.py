@@ -1,4 +1,4 @@
-from roman import Roman, MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO
+from roman import MIL, QUINIENTOS, CIEN, CINCUENTA, DIEZ, CINCO, UNO
 
 class RomanParser(object):
     def __init__(self):
