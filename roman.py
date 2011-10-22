@@ -1,4 +1,3 @@
-
 class Roman(object):
     def __init__(self, symbol, value, previous):
         self.symbol = symbol
@@ -26,7 +25,6 @@ class ChildRoman(Roman):
 
     def _child_parse(self, result, a_number):
         return result, a_number
-
 
 MIL = Roman("M", 1000, ChildRoman("CM", 900))
 QUINIENTOS = Roman("D", 500, ChildRoman("CD", 400))
